@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather Forecast</title>
+  <style>
+    body {
+      background-color: #c46801;
+    }
+    
+    .forecast-text {
+      padding: 20px;
+      background-image: linear-gradient(to right, #FFA500, #263680);
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position: top left;
+      color: #c5c3ca;
+      font-family: Terminal, monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="forecast-text">
+    <h1>Weather Forecast</h1>
+    <p>This is a sample forecast text.</p>
+  </div>
+
+  <script>
+    function refreshWeather() {
+      // Perform AJAX request to update weather data
+      // Replace this with your own logic
+      
+      // Example AJAX request using Fetch API
+      fetch('https://api.weatherapi.com/v1/current.json?key=YOUR_API_KEY&q=London')
+        .then(response => response.json())
+        .then(data => {
+          // Update forecast information
+          const forecastText = document.getElementById('forecast-text');
+          forecastText.innerHTML = `<h1>Weather Forecast</h1>
+                                     <p>Temperature: ${data.current.temp_c}°C</p>`;
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    // Call the refreshWeather function initially
+    refreshWeather();
+
+    // Call the refreshWeather function every 1 hour (3600000 milliseconds)
+    setInterval(refreshWeather, 3600000);
+  </script>
+</body>
+</html>
