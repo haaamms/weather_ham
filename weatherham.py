@@ -9,8 +9,6 @@ Created on Sun May 14 09:31:18 2023
 # 
 # api_key = '6969420'
 # 
-# lat = 29.787580
-# long = -95.392990
 # 
 # url = f'https://api.weather.gov/points/{lat},{long}/forecast'
 # headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36'}
